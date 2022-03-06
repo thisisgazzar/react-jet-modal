@@ -42,17 +42,24 @@ export const Modal = ({
   const [openModal, setOpenModal] = useState(false);
   const [closingNow, setClosingNow] = useState(false);
 
-  useEffect(() => {
-    let el = document.createElement("div");
-    el.setAttribute("id", id);
-    document.body.appendChild(el);
-  }, []);
-
   const handleEsc = useCallback((event) => {
     const { keyCode } = event;
     if (keyCode === 27) {
       onClose();
     }
+  }, []);
+  
+  const closeModalHandler = () => {
+    setOpenModal(false);
+    setBeforeClose(false);
+    setClosingNow(false);
+    onClose();
+  }
+
+  useEffect(() => {
+    let el = document.createElement("div");
+    el.setAttribute("id", id);
+    document.body.appendChild(el);
   }, []);
 
   useEffect(() => {
@@ -82,15 +89,7 @@ export const Modal = ({
       setOpenModal(false);
       setBeforeClose(false);
     }
-  }, [open, setBeforeClose, openModal]);
-
-
-  const closeModalHandler = () => {
-    setOpenModal(false);
-    setBeforeClose(false);
-    setClosingNow(false);
-    onClose();
-  }  
+  }, [open, setBeforeClose, openModal]);  
 
   if (openModal) return ReactDom.createPortal(
     <>
