@@ -96,7 +96,7 @@ export const Modal = ({
     <>
       <div
         style={{ ...OVERLAY_STYLES, backgroundColor: overlayBackgroundColor }}
-        onClick={closeOnOuterClick ? () => closeModalHandler() : false}
+        onClick={closeOnOuterClick ? () => closeModalHandler() : () => false}
         className={`${overlayClassName}`}
       />
       <div
