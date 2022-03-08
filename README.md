@@ -67,9 +67,9 @@ export default function App() {
 - `overlayClassName`: Add custom className to the overlay.
 - `modalAnimateClassName`: Add animation className. `modal-animated-fadeInDown` and `modal-animated-zoomIn` are the only supported animations at the moment.
 - `closeOnOuterClick`: Close modal on clicking anywhere outside the modal container(takes a boolean `true` or `false`).
-- `closeOnEsc`: Close modal on clicking Escape on the keyboard(takes a boolean `true` or `false`).
+- `closeOnEsc`: Close modal on pressing Escape on the keyboard(takes a boolean `true` or `false`).
 - `overlayBackgroundColor`: Assign a background color to the overlay(`rgba(0, 0, 0, 0.8)` is default).
-- `modalBackground`: Assign a background color to the modal(`rgb(255,255, 255)` is default).
+- `modalBackground`: Assign a background color to the modal.
 - `modalBorderRadius`: Assign a border radius to the modal(`5px` is default).
 
 `open` is a required prop! And `onClose` is required as well only if closeOnEsc or closeOnOuterClick is set to `true`.
